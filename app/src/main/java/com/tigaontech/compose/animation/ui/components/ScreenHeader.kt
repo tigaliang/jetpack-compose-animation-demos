@@ -14,7 +14,7 @@ fun ScreenHeader() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 24.dp)
+            .padding(horizontal = 16.dp, vertical = 16.dp)
     ) {
         Text(text = "Animation Demos", fontSize = 24.sp)
 

@@ -2,24 +2,33 @@ package com.tigaontech.compose.animation.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.Text
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.tigaontech.compose.animation.ui.components.ScreenHeader
+import com.tigaontech.compose.animation.ui.demos.AnimateStatesDemo
+import com.tigaontech.compose.animation.ui.demos.AnimatedVisibilityDemo
 
 @Composable
 fun AnimationDemoScreen(demo: AnimationDemo) {
-    Column(modifier = Modifier.fillMaxSize()) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
         ScreenHeader()
 
-        when (demo) {
-            AnimationDemo.DemoA -> {
-                Text(text = "Demonstrating animation A")
-            }
-            AnimationDemo.DemoB -> {
-                Button(onClick = {}) {
-                    Text(text = "Demonstrating animation B")
+        Column(
+            Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+        ) {
+            when (demo) {
+                AnimationDemo.AnimateStates -> {
+                    AnimateStatesDemo()
+                }
+                AnimationDemo.AnimatedVisibility -> {
+                    AnimatedVisibilityDemo()
                 }
             }
         }
