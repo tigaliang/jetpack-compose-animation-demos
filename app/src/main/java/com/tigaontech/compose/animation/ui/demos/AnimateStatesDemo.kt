@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.tigaontech.compose.animation.R
 import com.tigaontech.compose.animation.ui.components.DemoBlock
 import com.tigaontech.compose.animation.ui.components.SimpleButton
+import com.tigaontech.compose.animation.utils.toggle
 
 @Composable
 fun AnimateStatesDemo() {
@@ -202,5 +203,3 @@ fun AnimateStatesDemo() {
         }
     }
 }
-
-fun Boolean.toggle() = !this
