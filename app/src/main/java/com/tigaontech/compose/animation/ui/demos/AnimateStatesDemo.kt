@@ -175,25 +175,29 @@ fun AnimateStatesDemo() {
     }
 
     DemoBlock(title = "使用 animationSpec 和 finishedListener 调整动画参数") {
-        var hintText by remember { mutableStateOf("当前文本大小是 12sp") }
+        var hintText by remember { mutableStateOf("绿色") }
         var animationState by remember { mutableStateOf(true) }
-        val fontSize by animateIntAsState(
-            targetValue = if (animationState) {
-                12
-            } else {
-                24
-            },
-            animationSpec = tween(durationMillis = 1000, easing = LinearEasing),
+        val color by animateColorAsState(
+            targetValue = if (animationState) Color.Green else Color.Blue,
+            animationSpec = tween(durationMillis = 600, easing = LinearEasing),
             finishedListener = {
-                hintText = "当前文本大小是 ${if (animationState) 12 else 24}sp"
+                hintText = if (animationState) "绿色" else "蓝色"
             }
         )
 
-        Text(text = hintText, fontSize = fontSize.sp)
+        Box(
+            Modifier
+                .size(60.dp)
+                .background(color)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Text(text = "当前方块颜色是：$hintText")
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        SimpleButton(text = "缓慢地改变文本大小并在动画结束后更新文字") {
+        SimpleButton(text = "改变方块颜色") {
             animationState = animationState.toggle()
         }
     }
