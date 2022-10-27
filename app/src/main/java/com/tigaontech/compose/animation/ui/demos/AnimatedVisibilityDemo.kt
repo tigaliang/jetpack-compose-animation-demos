@@ -4,6 +4,7 @@ package com.tigaontech.compose.animation.ui.demos
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.expandHorizontally
 import androidx.compose.animation.expandIn
 import androidx.compose.animation.expandVertically
@@ -265,5 +266,22 @@ fun AnimatedVisibilityDemo() {
                     .size(60.dp)
             )
         }
+    }
+
+    DemoBlock(title = "animateFloatAsState 改变透明度实现隐藏和显示") {
+        var visible by remember { mutableStateOf(true) }
+        val alpha by animateFloatAsState(targetValue = if (visible) 1f else 0f)
+
+        SimpleButton(text = if (visible) "隐藏" else "显示") {
+            visible = visible.toggle()
+        }
+
+        Image(
+            painter = painterResource(id = R.drawable.android_logo),
+            contentDescription = "launcher icon",
+            alpha = alpha,
+            modifier = Modifier
+                .size(60.dp)
+        )
     }
 }
