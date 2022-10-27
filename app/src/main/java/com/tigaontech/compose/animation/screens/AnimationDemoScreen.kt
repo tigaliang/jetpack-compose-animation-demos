@@ -7,6 +7,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.tigaontech.compose.animation.ui.components.ScreenHeader
+import com.tigaontech.compose.animation.ui.demos.AnimateContentSizeDemo
 import com.tigaontech.compose.animation.ui.demos.AnimateStatesDemo
 import com.tigaontech.compose.animation.ui.demos.AnimatedVisibilityDemo
 
@@ -24,12 +25,9 @@ fun AnimationDemoScreen(demo: AnimationDemo) {
                 .verticalScroll(rememberScrollState())
         ) {
             when (demo) {
-                AnimationDemo.AnimateStates -> {
-                    AnimateStatesDemo()
-                }
-                AnimationDemo.AnimatedVisibility -> {
-                    AnimatedVisibilityDemo()
-                }
+                AnimationDemo.AnimateStates -> AnimateStatesDemo()
+                AnimationDemo.AnimatedVisibility -> AnimatedVisibilityDemo()
+                AnimationDemo.AnimateContentSize -> AnimateContentSizeDemo()
             }
         }
     }
