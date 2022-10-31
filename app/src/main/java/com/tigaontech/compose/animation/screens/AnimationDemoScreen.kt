@@ -10,6 +10,7 @@ import com.tigaontech.compose.animation.ui.components.ScreenHeader
 import com.tigaontech.compose.animation.ui.demos.AnimateContentSizeDemo
 import com.tigaontech.compose.animation.ui.demos.AnimateStatesDemo
 import com.tigaontech.compose.animation.ui.demos.AnimatedVisibilityDemo
+import com.tigaontech.compose.animation.ui.demos.LazyItemChangesDemo
 
 @Composable
 fun AnimationDemoScreen(demo: AnimationDemo) {
@@ -28,6 +29,7 @@ fun AnimationDemoScreen(demo: AnimationDemo) {
                 AnimationDemo.AnimateStates -> AnimateStatesDemo()
                 AnimationDemo.AnimatedVisibility -> AnimatedVisibilityDemo()
                 AnimationDemo.AnimateContentSize -> AnimateContentSizeDemo()
+                AnimationDemo.LazyListItemChanges -> LazyItemChangesDemo()
             }
         }
     }
