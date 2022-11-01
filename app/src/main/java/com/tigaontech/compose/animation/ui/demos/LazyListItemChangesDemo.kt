@@ -20,7 +20,7 @@ import com.tigaontech.compose.animation.ui.components.SimpleButton
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LazyListItemChangesDemo() {
-    DemoBlock(title = "animateContentSize 改变大小") {
+    DemoBlock(title = "列表项发生改变时的动画") {
         var items by remember {
             mutableStateOf(
                 listOf(
