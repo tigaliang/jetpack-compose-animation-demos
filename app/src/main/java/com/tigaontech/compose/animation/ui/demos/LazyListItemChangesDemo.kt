@@ -19,7 +19,7 @@ import com.tigaontech.compose.animation.ui.components.SimpleButton
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun LazyItemChangesDemo() {
+fun LazyListItemChangesDemo() {
     DemoBlock(title = "animateContentSize 改变大小") {
         var items by remember {
             mutableStateOf(
@@ -34,12 +34,8 @@ fun LazyItemChangesDemo() {
             )
         }
 
-        SimpleButton(text = if (items.size == 6) "减少一项" else "添加一项") {
-            items = if (items.size == 6) {
-                listOf("Item A", "Item B", "Item D", "Item E", "Item F")
-            } else {
-                listOf("Item A", "Item B", "Item C", "Item D", "Item E", "Item F")
-            }
+        SimpleButton(text = "打乱顺序") {
+            items = items.shuffled()
         }
 
         LazyHorizontalGrid(rows = GridCells.Fixed(2), modifier = Modifier.height(200.dp)) {
