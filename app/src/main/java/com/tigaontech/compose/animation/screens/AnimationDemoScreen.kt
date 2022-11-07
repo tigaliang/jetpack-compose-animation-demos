@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import com.tigaontech.compose.animation.ui.components.ScreenHeader
 import com.tigaontech.compose.animation.ui.demos.AnimateContentSizeDemo
 import com.tigaontech.compose.animation.ui.demos.AnimateStatesDemo
+import com.tigaontech.compose.animation.ui.demos.AnimatedContentDemo
 import com.tigaontech.compose.animation.ui.demos.AnimatedVisibilityDemo
 import com.tigaontech.compose.animation.ui.demos.LazyListItemChangesDemo
 
@@ -30,6 +31,7 @@ fun AnimationDemoScreen(demo: AnimationDemo) {
                 AnimationDemo.AnimatedVisibility -> AnimatedVisibilityDemo()
                 AnimationDemo.AnimateContentSize -> AnimateContentSizeDemo()
                 AnimationDemo.LazyListItemChanges -> LazyListItemChangesDemo()
+                AnimationDemo.AnimatedContent -> AnimatedContentDemo()
             }
         }
     }
