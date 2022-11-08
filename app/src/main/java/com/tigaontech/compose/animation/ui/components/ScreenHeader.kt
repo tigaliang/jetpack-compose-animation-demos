@@ -16,12 +16,12 @@ fun ScreenHeader() {
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 16.dp)
     ) {
-        Text(text = "Animation Demos", fontSize = 24.sp)
+        Text(text = "Compose Animation Demos", fontSize = 24.sp)
 
         Spacer(modifier = Modifier.height(4.dp))
 
         Text(
-            text = "Author: Tiga @tigaontech.com",
+            text = "Author: @tigaontech.com",
             fontSize = 12.sp
         )
     }

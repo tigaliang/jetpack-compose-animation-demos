@@ -12,6 +12,7 @@ import com.tigaontech.compose.animation.ui.demos.AnimateStatesDemo
 import com.tigaontech.compose.animation.ui.demos.AnimatedContentDemo
 import com.tigaontech.compose.animation.ui.demos.AnimatedVisibilityDemo
 import com.tigaontech.compose.animation.ui.demos.LazyListItemChangesDemo
+import com.tigaontech.compose.animation.ui.demos.UpdateTransitionDemo
 
 @Composable
 fun AnimationDemoScreen(demo: AnimationDemo) {
@@ -32,6 +33,7 @@ fun AnimationDemoScreen(demo: AnimationDemo) {
                 AnimationDemo.AnimateContentSize -> AnimateContentSizeDemo()
                 AnimationDemo.LazyListItemChanges -> LazyListItemChangesDemo()
                 AnimationDemo.AnimatedContent -> AnimatedContentDemo()
+                AnimationDemo.UpdateTransition -> UpdateTransitionDemo()
             }
         }
     }

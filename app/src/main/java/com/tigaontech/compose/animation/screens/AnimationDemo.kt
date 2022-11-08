@@ -7,7 +7,8 @@ enum class AnimationDemo(
     AnimatedVisibility("AnimatedVisibility"),
     AnimateContentSize("animateContentSize"),
     LazyListItemChanges("animateItemPlacement"),
-    AnimatedContent("AnimatedContent")
+    AnimatedContent("AnimatedContent"),
+    UpdateTransition("updateTransition")
     ;
 
     companion object {
